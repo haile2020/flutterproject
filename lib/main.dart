@@ -4,6 +4,7 @@ import 'package:table_calendar/table_calendar.dart';
 import "package:syncfusion_flutter_calendar/calendar.dart";
 import 'package:untitled/homepage.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flare_flutter/flare_actor.dart';
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -22,22 +23,49 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Center(child: Text('Welcome'),
         ),
+
+        backgroundColor: Colors.black,
       ),
       body: Center(
         child: ListView(
           children: [
-
+            Container(
+              // color: Colors.red,
+              height: 300,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(800)),
+                border:  Border(
+                  top: BorderSide(width: 2.0, color: (Colors.red)),
+                  left: BorderSide(width: 2.0, color: (Colors.red)),
+                  right: BorderSide(width: 2.0, color: (Colors.red)),
+                  bottom: BorderSide(width: 2.0, color: (Colors.red)),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("images/small.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Sign in',
-                  style: TextStyle(fontSize: 20),
-                )),
+                  'WELCOME WARO APP',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blue,
+                  fontFamily: 'monospace',
+                  fontWeight: FontWeight.bold),
+                ),
+              color: Colors.black,
+            ),
             Container(
+              color: Colors.white,
               padding: const EdgeInsets.all(10),
               child: TextField(
                 controller: nameController,
@@ -48,41 +76,55 @@ class SignInPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              color: Colors.white,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Password',
+
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             TextButton(
               onPressed: () {
                 //forgot password screen
               },
+
               child: const Text('Forgot Password',),
             ),
             Container(
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
-                  child: const Text('Login'),
+                  child: const Text('Login', style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontFamily: 'monospace',
+                      fontWeight: FontWeight.bold),),
                   onPressed: () {
-                    // print(nameController.text);
-                    // print(passwordController.text);
                     Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => HomePage()),
                               );
                   },
+
                 )
             ),
 
             Row(
               children: <Widget>[
-                const Text('Does not have account?'),
+                const Text('Does not have account?',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.blue,
+                      fontFamily: 'monospace',
+                      fontWeight: FontWeight.bold),),
                 TextButton(
                   child: const Text(
                     'Sign Up',
@@ -99,17 +141,7 @@ class SignInPage extends StatelessWidget {
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
-            Container(
-              // color: Colors.red,
-            height: 300,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("images/small.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+
 
 
             ],
@@ -228,19 +260,61 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple,
       appBar: AppBar(
-        title: const Text('Home Page'),
+        backgroundColor: Colors.pinkAccent,
+        title: const Center(child: Text('Home Page',
+          style: TextStyle(
+            fontFamily: 'monospace',
+            fontWeight: FontWeight.bold
+          ),),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
       body: Center(
 
         child: ListView(
           children: [
+            const SizedBox(height: 20,),
             Container(
-
+              // color: Colors.red,
+              height: 300,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(800)),
+                border:  Border(
+                  top: BorderSide(width: 4.0, color: (Colors.red)),
+                  left: BorderSide(width: 4.0, color: (Colors.red)),
+                  right: BorderSide(width: 4.0, color: (Colors.red)),
+                  bottom: BorderSide(width: 4.0, color: (Colors.red)),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("images/small.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 40,),
+            Container(
+              height: 200,
                   child: TextButton(
                     child: const Text(
                       'CALENDAR',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                        fontSize: 20,
+                      fontFamily: 'monospace',
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     onPressed: () {
                       //signup screen
@@ -252,15 +326,75 @@ class HomePage extends StatelessWidget {
 
                 ),
             ),
+            const SizedBox(height: 10,),
             Container(
-
+              height: 50,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('Go back!'),
+                child: const Text('Go back!',
+                style: TextStyle(
+                  fontSize: 18,
+                    fontFamily: 'monospace',
+                    fontWeight: FontWeight.bold),
+                ),
               ),
 
+            ),
+            const SizedBox(height: 80,),
+            BottomAppBar(
+              color: Colors.blue,
+              child: IconTheme(
+                data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+                child: Row(
+                  children: <Widget>[
+                    IconButton(
+                      tooltip: 'Open navigation menu',
+                      icon: const Icon(Icons.menu,size: 40,),
+                      onPressed: () {
+
+                      },
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Home',
+                      icon: const Icon(Icons.home_filled,size: 35,),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      },
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Search',
+                      icon: const Icon(Icons.search,size: 35,),
+                      onPressed: () {},
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Favorite',
+                      icon: const Icon(Icons.schedule,size: 35,),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Calnder()),
+                        );
+                      },
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Favorite',
+                      icon: const Icon(Icons.account_circle_outlined,size: 35,),
+                      onPressed: () {},
+                    ),
+
+                  ],
+                ),
+              ),
             ),
 
           ],
@@ -268,6 +402,7 @@ class HomePage extends StatelessWidget {
         ),
 
       ),
+
     );
   }
 }
@@ -282,14 +417,20 @@ class Calnder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pinkAccent,
         title: const Text("Cycle Calendar"),
         centerTitle: true,
       ),
-      body: TableCalendar(
-        focusedDay: DateTime.now(),
-        firstDay: DateTime(1990),
-        lastDay: DateTime(2050),
+      body: Container(
+        color: Colors.purple,
+        child: TableCalendar(
+          focusedDay: DateTime.now(),
+          firstDay: DateTime(1990),
+          lastDay: DateTime(2050),
+        ),
       ),
+
+      
     );
   }
 }
