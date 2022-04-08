@@ -55,10 +55,10 @@ class SignInPage extends StatelessWidget {
                   ),
                 ],
                   border:  Border(
-                  top: BorderSide(width: 5.0, color: (Colors.blue)),
-                  left: BorderSide(width: 5.0, color: (Colors.blue)),
-                  right: BorderSide(width: 5.0, color: (Colors.blue)),
-                  bottom: BorderSide(width: 5.0, color: (Colors.blue)),
+                  top: BorderSide(width: 25.0, color: (Colors.blue)),
+                  left: BorderSide(width: 25.0, color: (Colors.blue)),
+                  right: BorderSide(width: 25.0, color: (Colors.blue)),
+                  bottom: BorderSide(width: 25.0, color: (Colors.blue)),
                 ),
                 image: DecorationImage(
                   image: AssetImage("images/small.jpg"),
@@ -67,7 +67,7 @@ class SignInPage extends StatelessWidget {
               ),
 
             ),
-            SizedBox(height: 14,),
+            SizedBox(height: 10,),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -81,7 +81,7 @@ class SignInPage extends StatelessWidget {
                 ),
               color: Colors.black,
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 10,),
             Container(
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -101,6 +101,7 @@ class SignInPage extends StatelessWidget {
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               margin: EdgeInsets.only(left: 10,right: 10),
+
               color: Colors.white,
               child: TextField(
                 obscureText: true,
@@ -123,13 +124,30 @@ class SignInPage extends StatelessWidget {
               child: const Text('Forgot Password',),
             ),
             Container(
-                height: 60,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                margin: EdgeInsets.only(left: 10,right: 10),
+                height: 90,
+                padding: const EdgeInsets.fromLTRB(10, 15, 10, 10),
+                margin: EdgeInsets.only(left: 10,right: 10,bottom: 10,top: 0),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(800)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.pinkAccent,
+                      spreadRadius: 4,
+                      blurRadius: 4,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  border:  Border(
+                    top: BorderSide(width: 15.0, color: (Colors.blue)),
+                    left: BorderSide(width: 15.0, color: (Colors.blue)),
+                    right: BorderSide(width: 15.0, color: (Colors.blue)),
+                    bottom: BorderSide(width: 15.0, color: (Colors.blue)),
+                  ),
+                ),
                 child: ElevatedButton(
 
-                  child: const Text('Login', style: TextStyle(
-                      fontSize: 20,
+                  child: const Text('LOGIN', style: TextStyle(
+                      fontSize: 24,
                       color: Colors.black,
                       fontFamily: 'monospace',
                       fontWeight: FontWeight.bold),
@@ -144,8 +162,8 @@ class SignInPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     primary: Colors.pinkAccent,
                     // Background color
-                    shadowColor: Colors.blueAccent
                   ),
+
 
                 )
             ),
@@ -328,10 +346,10 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
                 border:  Border(
-                  top: BorderSide(width: 5.0, color: (Colors.red)),
-                  left: BorderSide(width: 5.0, color: (Colors.red)),
-                  right: BorderSide(width: 5.0, color: (Colors.red)),
-                  bottom: BorderSide(width: 5.0, color: (Colors.red)),
+                  top: BorderSide(width: 25.0, color: (Colors.pinkAccent)),
+                  left: BorderSide(width: 25.0, color: (Colors.pinkAccent)),
+                  right: BorderSide(width: 25.0, color: (Colors.pinkAccent)),
+                  bottom: BorderSide(width: 25.0, color: (Colors.pinkAccent)),
                 ),
                 image: DecorationImage(
                   image: AssetImage("images/small.jpg"),
@@ -343,21 +361,22 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 40,),
             Container(
               height: 145,
+              margin: EdgeInsets.only(left: 50,right: 50,top: 0,bottom: 0),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(800)),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.blueAccent,
-                    spreadRadius: 20,
+                    color: Colors.pinkAccent,
+                    spreadRadius: 10,
                     blurRadius: 7,
                     offset: Offset(0, 3),
                   ),
                 ],
                 border:  Border(
-                  top: BorderSide(width: 5.0, color: (Colors.red)),
-                  left: BorderSide(width: 5.0, color: (Colors.red)),
-                  right: BorderSide(width: 5.0, color: (Colors.red)),
-                  bottom: BorderSide(width: 5.0, color: (Colors.red)),
+                  top: BorderSide(width: 25.0, color: (Colors.blue)),
+                  left: BorderSide(width: 25.0, color: (Colors.blue)),
+                  right: BorderSide(width: 25.0, color: (Colors.blue)),
+                  bottom: BorderSide(width: 25.0, color: (Colors.blue)),
                 ),
                 // image: DecorationImage(
                 //   image: AssetImage("images/small.jpg"),
@@ -365,13 +384,37 @@ class HomePage extends StatelessWidget {
                 // ),
               ),
                   child: TextButton(
-                    child: const Text(
-                      'CALENDAR',
-                      style: TextStyle(
-                        color: Colors.pinkAccent,
-                        fontSize: 50,
-                      fontFamily: 'monospace',
-                        fontWeight: FontWeight.bold,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(800)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.pinkAccent,
+                            spreadRadius: 10,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                        border:  Border(
+                          top: BorderSide(width: 10.0, color: (Colors.lightGreenAccent)),
+                          left: BorderSide(width: 10.0, color: (Colors.lightGreenAccent)),
+                          right: BorderSide(width: 10.0, color: (Colors.lightGreenAccent)),
+                          bottom: BorderSide(width: 10.0, color: (Colors.lightGreenAccent)),
+                        ),
+                        // image: DecorationImage(
+                        //   image: AssetImage("images/small.jpg"),
+                        //   fit: BoxFit.cover,
+                        // ),
+                      ),
+                      child: const Text(
+                        'CALENDAR',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                        fontFamily: 'monospace',
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     onPressed: () {
@@ -389,11 +432,12 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.only(left: 50,right: 50,bottom: 0,top: 18),
               height: 60,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('Go back!',
+                child: const Text('BACK',
                 style: TextStyle(
                   fontSize: 18,
                     fontFamily: 'monospace',
@@ -410,6 +454,7 @@ class HomePage extends StatelessWidget {
               color: Colors.transparent,
               margin: EdgeInsets.only(left: 5,top: 30,right: 5,bottom: 8),
               padding: EdgeInsets.all(10),
+
               child: BottomAppBar(
                 color: Colors.pinkAccent,
                 child: IconTheme(
@@ -482,6 +527,7 @@ class Calnder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         title: const Text("Cycle Calendar"),
@@ -508,7 +554,7 @@ class Calnder extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Go back!',
+              child: const Text('BACK',
                 style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'monospace',
