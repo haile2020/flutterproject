@@ -430,12 +430,14 @@ class Calnder extends StatelessWidget {
         title: const Text("Cycle Calendar"),
         centerTitle: true,
       ),
-      body: Container(
-        color: Colors.purple,
-        child: TableCalendar(
-          focusedDay: DateTime.now(),
-          firstDay: DateTime(1990),
-          lastDay: DateTime(2050),
+      body: Center(
+        child: Container(
+          color: Colors.purple,
+          child: TableCalendar(
+            focusedDay: DateTime.now(),
+            firstDay: DateTime(1990),
+            lastDay: DateTime(2050),
+          ),
         ),
       ),
 
