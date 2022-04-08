@@ -346,6 +346,9 @@ class HomePage extends StatelessWidget {
                     fontFamily: 'monospace',
                     fontWeight: FontWeight.bold),
                 ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.pinkAccent, // Background color
+                ),
               ),
 
             ),
