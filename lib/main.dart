@@ -25,32 +25,49 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Center(child: Text('Welcome'),
+        title: const Center(child: Text('Welcome',
+          style: TextStyle(
+              fontSize: 20,
+              color: Colors.blueAccent,
+              fontFamily: 'monospace',
+              fontWeight: FontWeight.bold),
+        ),
         ),
 
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.pinkAccent,
       ),
       body: Center(
         child: ListView(
           children: [
             Container(
-              // color: Colors.red,
+              margin: EdgeInsets.only(left: 50,right: 50,top: 50,bottom: 50),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
               height: 300,
               width: double.infinity,
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(800)),
-                border:  Border(
-                  top: BorderSide(width: 2.0, color: (Colors.red)),
-                  left: BorderSide(width: 2.0, color: (Colors.red)),
-                  right: BorderSide(width: 2.0, color: (Colors.red)),
-                  bottom: BorderSide(width: 2.0, color: (Colors.red)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.pinkAccent,
+                    spreadRadius: 40,
+                    blurRadius: 8,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+                  border:  Border(
+                  top: BorderSide(width: 5.0, color: (Colors.blue)),
+                  left: BorderSide(width: 5.0, color: (Colors.blue)),
+                  right: BorderSide(width: 5.0, color: (Colors.blue)),
+                  bottom: BorderSide(width: 5.0, color: (Colors.blue)),
                 ),
                 image: DecorationImage(
                   image: AssetImage("images/small.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
+
             ),
+            SizedBox(height: 14,),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -64,9 +81,13 @@ class SignInPage extends StatelessWidget {
                 ),
               color: Colors.black,
             ),
+            SizedBox(height: 20,),
             Container(
+              height: 50,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              margin: EdgeInsets.only(left: 10,right: 10),
               color: Colors.white,
-              padding: const EdgeInsets.all(10),
+
               child: TextField(
                 controller: nameController,
                 decoration: const InputDecoration(
@@ -75,9 +96,12 @@ class SignInPage extends StatelessWidget {
                 ),
               ),
             ),
+
             Container(
-              color: Colors.white,
+              height: 50,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              margin: EdgeInsets.only(left: 10,right: 10),
+              color: Colors.white,
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
@@ -89,7 +113,7 @@ class SignInPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 2,
             ),
             TextButton(
               onPressed: () {
@@ -99,8 +123,9 @@ class SignInPage extends StatelessWidget {
               child: const Text('Forgot Password',),
             ),
             Container(
-                height: 50,
+                height: 60,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                margin: EdgeInsets.only(left: 10,right: 10),
                 child: ElevatedButton(
 
                   child: const Text('Login', style: TextStyle(
@@ -117,7 +142,9 @@ class SignInPage extends StatelessWidget {
                               );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.pinkAccent, // Background color
+                    primary: Colors.pinkAccent,
+                    // Background color
+                    shadowColor: Colors.blueAccent
                   ),
 
                 )
@@ -148,17 +175,10 @@ class SignInPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
             ),
 
-
-
             ],
-
         ),
-
-
       ),
-
     );
-
   }
 }
 
@@ -269,7 +289,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
-        title: const Center(child: Text('Home Page',
+        title: const Center(child: Text('Home',
           style: TextStyle(
             fontFamily: 'monospace',
             fontWeight: FontWeight.bold
@@ -294,30 +314,62 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20,),
             Container(
               // color: Colors.red,
+              margin: EdgeInsets.only(left: 50,right: 50,top: 10,bottom: 50),
               height: 300,
               width: double.infinity,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(800)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blueAccent,
+                    spreadRadius: 20,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ],
                 border:  Border(
-                  top: BorderSide(width: 4.0, color: (Colors.red)),
-                  left: BorderSide(width: 4.0, color: (Colors.red)),
-                  right: BorderSide(width: 4.0, color: (Colors.red)),
-                  bottom: BorderSide(width: 4.0, color: (Colors.red)),
+                  top: BorderSide(width: 5.0, color: (Colors.red)),
+                  left: BorderSide(width: 5.0, color: (Colors.red)),
+                  right: BorderSide(width: 5.0, color: (Colors.red)),
+                  bottom: BorderSide(width: 5.0, color: (Colors.red)),
                 ),
                 image: DecorationImage(
                   image: AssetImage("images/small.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
+
             ),
             const SizedBox(height: 40,),
             Container(
-              height: 200,
+              height: 145,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(800)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blueAccent,
+                    spreadRadius: 20,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+                border:  Border(
+                  top: BorderSide(width: 5.0, color: (Colors.red)),
+                  left: BorderSide(width: 5.0, color: (Colors.red)),
+                  right: BorderSide(width: 5.0, color: (Colors.red)),
+                  bottom: BorderSide(width: 5.0, color: (Colors.red)),
+                ),
+                // image: DecorationImage(
+                //   image: AssetImage("images/small.jpg"),
+                //   fit: BoxFit.cover,
+                // ),
+              ),
                   child: TextButton(
                     child: const Text(
                       'CALENDAR',
                       style: TextStyle(
-                        fontSize: 20,
+                        color: Colors.pinkAccent,
+                        fontSize: 50,
                       fontFamily: 'monospace',
                         fontWeight: FontWeight.bold,
                       ),
@@ -334,7 +386,8 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 10,),
             Container(
-              height: 50,
+              margin: EdgeInsets.only(left: 50,right: 50,bottom: 0,top: 18),
+              height: 60,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: ElevatedButton(
                 onPressed: () {
@@ -352,56 +405,60 @@ class HomePage extends StatelessWidget {
               ),
 
             ),
-            const SizedBox(height: 80,),
-            BottomAppBar(
-              color: Colors.pinkAccent,
-              child: IconTheme(
-                data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-                child: Row(
-                  children: <Widget>[
-                    IconButton(
-                      tooltip: 'Open navigation menu',
-                      icon: const Icon(Icons.menu,size: 40,),
-                      onPressed: () {
+            const SizedBox(height: 10,),
+            Container(
+              color: Colors.transparent,
+              margin: EdgeInsets.only(left: 5,top: 30,right: 5,bottom: 8),
+              padding: EdgeInsets.all(10),
+              child: BottomAppBar(
+                color: Colors.pinkAccent,
+                child: IconTheme(
+                  data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+                  child: Row(
+                    children: <Widget>[
+                      IconButton(
+                        tooltip: 'Home',
+                        icon: const Icon(Icons.home_filled,size: 30,),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        },
+                      ),
+                      SizedBox(width: 30,),
+                      IconButton(
+                        tooltip: 'Search',
+                        icon: const Icon(Icons.search,size: 30,),
+                        onPressed: () {},
+                      ),
+                      SizedBox(width: 30,),
+                      IconButton(
+                        tooltip: 'Calendar',
+                        icon: const Icon(Icons.schedule,size: 30,),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Calnder()),
+                          );
+                        },
+                      ),
+                      SizedBox(width: 30,),
+                      IconButton(
+                        tooltip: 'Account',
+                        icon: const Icon(Icons.account_circle_outlined,size: 30,),
+                        onPressed: () {},
+                      ),
+                      SizedBox(width: 30,),
+                      IconButton(
+                        tooltip: 'setting',
+                        icon: const Icon(Icons.settings,size: 30,),
+                        onPressed: () {
 
-                      },
-                    ),
-                    SizedBox(width: 30,),
-                    IconButton(
-                      tooltip: 'Home',
-                      icon: const Icon(Icons.home_filled,size: 35,),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      },
-                    ),
-                    SizedBox(width: 30,),
-                    IconButton(
-                      tooltip: 'Search',
-                      icon: const Icon(Icons.search,size: 35,),
-                      onPressed: () {},
-                    ),
-                    SizedBox(width: 30,),
-                    IconButton(
-                      tooltip: 'Calendar',
-                      icon: const Icon(Icons.schedule,size: 35,),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Calnder()),
-                        );
-                      },
-                    ),
-                    SizedBox(width: 30,),
-                    IconButton(
-                      tooltip: 'Account',
-                      icon: const Icon(Icons.account_circle_outlined,size: 35,),
-                      onPressed: () {},
-                    ),
-
-                  ],
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -430,16 +487,99 @@ class Calnder extends StatelessWidget {
         title: const Text("Cycle Calendar"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          color: Colors.purple,
-          child: TableCalendar(
-            focusedDay: DateTime.now(),
-            firstDay: DateTime(1990),
-            lastDay: DateTime(2050),
+      body: ListView(
+        children: [
+          Container(
+            height: 350,
+            margin: EdgeInsets.only(top: 10,left: 10,right: 10),
+            color: Colors.purple,
+            child: TableCalendar(
+              focusedDay: DateTime.now(),
+              firstDay: DateTime(1990),
+              lastDay: DateTime(2050),
+            ),
           ),
-        ),
+          const SizedBox(height: 10,),
+          Container(
+            margin: EdgeInsets.only(left: 50,right: 50,bottom: 5,top: 230),
+            height: 60,
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Go back!',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: 'monospace',
+                    fontWeight: FontWeight.bold),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.pinkAccent, // Background color
+              ),
+            ),
+
+          ),
+          Container(
+            color: Colors.transparent,
+            margin: EdgeInsets.only(left: 5,top: 20,right: 5,bottom: 5),
+            padding: EdgeInsets.all(10),
+            child: BottomAppBar(
+              color: Colors.pinkAccent,
+              child: IconTheme(
+                data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+                child: Row(
+                  children: <Widget>[
+                    IconButton(
+                      tooltip: 'Home',
+                      icon: const Icon(Icons.home_filled,size: 30,),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      },
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Search',
+                      icon: const Icon(Icons.search,size: 30,),
+                      onPressed: () {},
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Calendar',
+                      icon: const Icon(Icons.schedule,size: 30,),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Calnder()),
+                        );
+                      },
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'Account',
+                      icon: const Icon(Icons.account_circle_outlined,size: 30,),
+                      onPressed: () {},
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      tooltip: 'setting',
+                      icon: const Icon(Icons.settings,size: 30,),
+                      onPressed: () {
+
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+
       ),
+
 
       
     );
