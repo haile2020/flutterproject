@@ -102,17 +102,23 @@ class SignInPage extends StatelessWidget {
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
+
                   child: const Text('Login', style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,
                       fontFamily: 'monospace',
-                      fontWeight: FontWeight.bold),),
+                      fontWeight: FontWeight.bold),
+                  )
+                  ,
                   onPressed: () {
                     Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => HomePage()),
                               );
                   },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.pinkAccent, // Background color
+                  ),
 
                 )
             ),
@@ -345,7 +351,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 80,),
             BottomAppBar(
-              color: Colors.blue,
+              color: Colors.pinkAccent,
               child: IconTheme(
                 data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
                 child: Row(
