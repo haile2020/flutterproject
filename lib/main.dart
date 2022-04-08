@@ -376,7 +376,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(width: 30,),
                     IconButton(
-                      tooltip: 'Favorite',
+                      tooltip: 'Calendar',
                       icon: const Icon(Icons.schedule,size: 35,),
                       onPressed: () {
                         Navigator.push(
@@ -387,7 +387,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(width: 30,),
                     IconButton(
-                      tooltip: 'Favorite',
+                      tooltip: 'Account',
                       icon: const Icon(Icons.account_circle_outlined,size: 35,),
                       onPressed: () {},
                     ),
